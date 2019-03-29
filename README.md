@@ -9,17 +9,17 @@
 
 制作过程
 -------
-* 1.新建空白镜像
+1.  新建空白镜像
 打开磁盘工具，状态栏‘文件’--‘新建映像’--‘空白映像’，名字任意，不要有中文，大小我们这里设置为6.8G，格式为HFS，即mac os扩展日志式，不要太小，也不建议太大，将其保存至桌面。示例中我做的是10.14的镜像，名字用macOS Mojave 10.14 beta 1 with Clover 4539 18A293u
 然后你就发现桌面会多出一个dmg文件和挂载后的一个磁盘。至此空白镜像新建完成
 
-* 2.利用命令写入app镜像到空白镜像
+2.  利用命令写入app镜像到空白镜像
 打开终端，输入命令来将镜像写进刚才我们新建的那个空盘，命令的大体格式如下：
-* $ sudo createinstallmedia制作工具 --volume 空盘 –applicationpath app镜像 --nointeraction
+  $ sudo createinstallmedia制作工具 --volume 空盘 –applicationpath app镜像 --nointeraction
 从macOS Mojave开始，--applicationpath参数被抛弃，因此，10.14以后的写入命令为下面的
-* $ sudo createinstallmedia制作工具 --volume 空盘 --nointeraction
+  $ sudo createinstallmedia制作工具 --volume 空盘 --nointeraction
 由于命令较长，在此稍作说明，方便朋友们理解，以支持更为广泛的命令为例，首先输入sudo后边跟一个空格，然后找到app镜像，右键显示包内容，依次进入/Contents/Resources, 找到一个名为createinstallmedia的文件，将其拖到终端，然后空格输入--volume再空格，然后将磁盘工具新建的那个空白镜像自动挂载后的空磁盘拖进来，空格输入--applicationpath，再空格将整个app镜像拖进来，空格输入--nointeraction, 最后空格回车输入密码再回车，静静等待写入完成即可。
-* 这时你会发现桌面的那个空磁盘现在已经有内容了，而且也有了自己的图标
+  这时你会发现桌面的那个空磁盘现在已经有内容了，而且也有了自己的图标
 到这里镜像已经写入完成
 
 集成四叶草引导
